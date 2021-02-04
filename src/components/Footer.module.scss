@@ -1,0 +1,22 @@
+.footerWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // background-color: blue;
+  // z-index: -1;
+  height: 60px;
+  &:hover {
+    .footer {
+      height: 60px;
+    }
+  }
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+}

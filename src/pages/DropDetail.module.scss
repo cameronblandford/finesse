@@ -1,0 +1,41 @@
+.dropDetailContainer {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  .left {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    flex-grow: 1;
+    img {
+      height: 100vh;
+      width: auto;
+      object-fit: cover; /* Do not scale the image */
+      object-position: center; /* Center the image within the element */
+    }
+  }
+  .right {
+    width: 65%;
+    height: 100%;
+    padding: 13vh 47px 0;
+    overflow: auto;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .dropShopGrid {
+      display: grid;
+      grid-auto-rows: 400px;
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+  min-height: 100vh;
+}

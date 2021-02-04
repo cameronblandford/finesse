@@ -1,0 +1,33 @@
+.dropDetailContainer {
+  display: flex;
+  .left {
+    flex-grow: 1;
+    background: lightblue;
+    height: 100%;
+    padding: 30px;
+    .breadcrumb {
+    }
+  }
+  .right {
+    width: 400px;
+    background: pink;
+    height: 100%;
+    padding: 30px;
+    padding-top: 100px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .sizeHed {
+      display: flex;
+      justify-content: space-between;
+    }
+    .sizeButtons {
+      display: flex;
+      button {
+        flex-grow: 1;
+      }
+    }
+  }
+  min-height: 100vh;
+}

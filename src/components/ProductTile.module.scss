@@ -1,0 +1,18 @@
+.productTile {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  background-image: url("https://picsum.photos/400/400");
+  background-size: cover;
+  background-position: center;
+  .productName {
+    text-align: center;
+    margin-bottom: 30px;
+    // mix-blend-mode: difference;
+    color: #010203;
+    .highlight {
+      background-color: #eee;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.desktop {
+  @media (max-width: 991px) {
+    display: none;
+  }
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  .photoCol {
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+    background-image: url("https://picsum.photos/200/800");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column-reverse;
+    &:hover {
+      .name {
+        color: white;
+      }
+    }
+    .name {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 72px;
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.mobile {
+  @media (min-width: 992px) {
+    display: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 335px;
+    gap: 1px;
+
+    .DropBox {
+      grid-column-end: span 1;
+      grid-row-end: span 1;
+      background-color: red;
+    }
+    .DropBox:nth-child(5n) {
+      grid-column-end: span 2;
+    }
+  }
+}
