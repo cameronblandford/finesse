@@ -7,7 +7,6 @@
   height: 40px;
   font-size: 12.5px;
   letter-spacing: 0.2px;
-  width: 100vw;
   @media (min-width: 992px) {
     margin-top: 4px;
     margin-left: 30px;
@@ -18,6 +17,7 @@
   justify-content: space-between;
   @media (max-width: 991px) {
     padding: 5% 5% 2%;
+    width: 100vw;
   }
   .brand img {
     height: 28px;

@@ -37,7 +37,7 @@ const DropDetail = ({ match }) => {
   }, [byId, dropId, setProducts]);
 
   // carousel settings
-  const settings = {
+  const socialCarouselSettings = {
     dots: false,
     infinite: false,
     speed: 500,
@@ -47,6 +47,14 @@ const DropDetail = ({ match }) => {
       { breakpoint: 700, settings: { slidesToShow: 2.5 } },
       { breakpoint: 500, settings: { slidesToShow: 1.5 } },
     ],
+  };
+
+  const splashCarouselSettings = {
+    dots: true,
+    arrows: false,
+    slidesToShow: 1,
+    appendDots: (dots) => <div className={styles.pageContainer}>{dots}</div>,
+    customPaging: (i) => <div className={styles.customPageElement}></div>,
   };
 
   // instagram post
@@ -61,7 +69,7 @@ const DropDetail = ({ match }) => {
       </div>
     );
   };
-
+  console.log(drop.mobileImg);
   return (
     <div>
       <Helmet>
@@ -125,11 +133,25 @@ const DropDetail = ({ match }) => {
           <div className={cx(styles.prevArrow)}>
             <Link to={`/drops/${prevName}`}>&lt; {prevName}</Link>
           </div>
-          <img
-            className={styles.headerImage}
-            src={drop.mobileImg}
-            alt={`A model wearing the full ${dropName} drop.`}
-          />
+          {Array.isArray(drop.mobileImg) ? (
+            <Slider {...splashCarouselSettings}>
+              {drop.mobileImg.map((x) => {
+                return (
+                  <img
+                    className={styles.headerImg}
+                    src={x}
+                    alt={`A model wearing the full ${dropName} drop.`}
+                  />
+                );
+              })}
+            </Slider>
+          ) : (
+            <img
+              className={styles.headerImg}
+              src={drop.mobileImg}
+              alt={`A model wearing the full ${dropName} drop.`}
+            />
+          )}
         </div>
         <div className={styles.shopHeader}>Shop the drop</div>
         <div className={styles.productGrid}>
@@ -150,7 +172,7 @@ const DropDetail = ({ match }) => {
         <div className={styles.influencerContent}>
           <div className={styles.hed}>The {dropName}</div>
           <div className={styles.subhed}>Influencer Content</div>
-          <Slider {...settings}>
+          <Slider {...socialCarouselSettings}>
             <SocialPost />
             <SocialPost />
             <SocialPost />

@@ -12,7 +12,8 @@ import GigiImage from "../assets/images/Drops-Bubble-Gigi.jpg";
 import LexiImage from "../assets/images/Drops-Bubble-Lexi.jpg";
 
 import BebeImageMobile from "../assets/images/drops/mobile/Drops-Mobile-Bebe.jpg";
-import LanaImageMobile from "../assets/images/drops/mobile/Drops-Mobile-Lana-Pink.jpg"; // TODO: include two images for Lana!!
+import LanaImageMobilePink from "../assets/images/drops/mobile/Drops-Mobile-Lana-Pink.jpg";
+import LanaImageMobileWhite from "../assets/images/drops/mobile/Drops-Mobile-Lana-White.jpg";
 import MaddyImageMobile from "../assets/images/drops/mobile/Drops-Mobile-Maddy.jpg";
 import AvaniImageMobile from "../assets/images/drops/mobile/Drops-Mobile-Avani.jpg";
 import JackoImageMobile from "../assets/images/drops/mobile/Drops-Mobile-Jacko.jpg";
@@ -28,7 +29,7 @@ export const dropMap = {
   lana: {
     id: "174635941965",
     img: LanaImage,
-    mobileImg: LanaImageMobile,
+    mobileImg: [LanaImageMobilePink, LanaImageMobileWhite],
   },
   bebe: {
     id: "173684097101",
