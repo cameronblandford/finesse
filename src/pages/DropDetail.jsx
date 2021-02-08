@@ -57,9 +57,7 @@ const DropDetail = ({ match }) => {
           <div className={styles.mainImage}>
             {/* NAVIGATION */}
             <div className={styles.backToDrops}>
-              <Link to="/drops">
-                <img src={ArrowBack} alt="Back arrow" className={styles.arrowBack} /> Back to drops
-              </Link>
+              <Link to="/drops">↖ Back to drops</Link>
             </div>
             <div className={cx(styles.prevArrow, "transform rotate-90")}>
               <Link to={`/drops/${prevName}`}>{prevName} ↓</Link>
