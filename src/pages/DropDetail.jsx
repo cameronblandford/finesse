@@ -107,7 +107,7 @@ const DropDetail = ({ match }) => {
           advances in AI throughout our production pipeline. Sabreena is wearing XS, made for 5'6",
           31.5" chest, 25" waist, 35" hips. Free shipping & free returns.`}
           </div>
-          <Button>View Episode</Button>
+          <Button className={styles.desktopCTA}>View Episode</Button>
           <h3>Shop the drop</h3>
           <hr />
           <div className={styles.dropShopGrid}>

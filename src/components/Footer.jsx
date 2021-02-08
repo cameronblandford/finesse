@@ -17,17 +17,23 @@ const Footer = () => {
             <div>Privacy Policy</div>
           </div>
           <div className={styles.right}>
-            <a href="https://instagram.com/finesseusstudios">
+            <a href="/placeholder" className={styles.shippingLink}>
+              Shipping and returns
+            </a>
+            <a href="https://instagram.com/finesseusstudios" className={styles.socialLink}>
               <img src={Instagram} alt="Instagram Logo" />
             </a>
-            <a href="https://twitter.com/finesse__us">
+            <a href="https://twitter.com/finesse__us" className={styles.socialLink}>
               <img src={Twitter} alt="Twitter Logo" />
             </a>
 
-            <a href="https://www.youtube.com/channel/UCTz6Mf3YefiTBq_YofQtxHw">
+            <a
+              href="https://www.youtube.com/channel/UCTz6Mf3YefiTBq_YofQtxHw"
+              className={styles.socialLink}
+            >
               <img src={Youtube} alt="Youtube Logo" />
             </a>
-            <a href="https://facebook.com/finesseusinc">
+            <a href="https://facebook.com/finesseusinc" className={styles.socialLink}>
               <img src={Facebook} alt="Facebook Logo" />
             </a>
           </div>

@@ -48,7 +48,7 @@
       position: absolute;
       z-index: 1000;
       color: $color-dark-gray;
-      top: 50%;
+      top: 47%;
       img {
         height: 16px;
         width: 16px;
@@ -91,11 +91,12 @@
     .header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 60px;
+      margin-bottom: 25px;
     }
     .voteCount {
       position: relative;
       top: -3px;
+      text-align: right;
     }
     h1 {
       font-size: $font-size-lg;
@@ -106,8 +107,11 @@
     }
     .dek {
       margin-top: 25px;
-      margin-bottom: 40px;
+      margin-bottom: 25px;
       max-width: 40rem;
+    }
+    .desktopCTA {
+      margin-bottom: 40px;
     }
     .dropShopGrid {
       display: grid;

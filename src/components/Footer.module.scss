@@ -22,20 +22,31 @@
   justify-content: space-between;
   position: relative;
   bottom: -100px;
+  color: $color-dark-gray;
+  font-size: $font-size-sm;
   .left {
     display: flex;
     align-items: center;
     div {
-      margin-left: 12px;
+      margin-left: 36px;
+      &:first-child {
+        margin-left: 45px;
+      }
     }
   }
   .right {
     display: flex;
     align-items: center;
+    padding-right: 47px;
+    .shippingLink {
+      margin-right: 15px;
+    }
+    .socialLink {
+      margin-left: 25px;
+    }
     img {
       height: 16px;
       width: auto;
-      margin-right: 12px;
     }
   }
   @media (min-width: 992px) {
