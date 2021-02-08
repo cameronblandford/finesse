@@ -23,18 +23,19 @@
     margin: 0 auto;
     // left: 25%;
     position: relative;
-    bottom: 15px;
+    bottom: 35px;
     justify-content: center;
     li {
       flex-grow: 1;
       margin: 0 5px;
       margin: 0;
       width: 100%;
-      height: 2px;
-      background-color: $color-dark-gray;
+      padding: 5px 0;
       overflow: hidden;
       &.slick-active {
-        background-color: $color-white;
+        :local .bar {
+          background-color: $color-white;
+        }
       }
       &::before {
         display: none;
@@ -45,7 +46,13 @@
     }
   }
 }
-.customPageElement {
+.clickableArea {
+  padding: 8px 0;
+  cursor: pointer;
+}
+.bar {
   width: 100%;
-  height: 100%;
+  height: 2px;
+  background-color: $color-offwhite;
+  margin: 8px 0;
 }

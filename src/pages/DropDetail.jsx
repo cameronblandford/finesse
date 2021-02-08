@@ -10,6 +10,9 @@ import Carousel from "../components/Carousel";
 import Slider from "react-slick";
 import Helmet from "react-helmet";
 import Button from "../components/Button";
+import LeftArrow from "../assets/icons/arrow-left.svg";
+import RightArrow from "../assets/icons/arrow-right.svg";
+import BackArrow from "../assets/icons/arrow-back.svg";
 import "slick-carousel/slick/slick.css";
 import { Link } from "react-router-dom";
 
@@ -71,13 +74,21 @@ const DropDetail = ({ match }) => {
           <div className={styles.mainImage}>
             {/* NAVIGATION */}
             <div className={styles.backToDrops}>
-              <Link to="/drops">↖ Back to drops</Link>
+              <Link to="/drops">
+                <img src={BackArrow} alt="Left arrow" className={styles.backArrow} /> Back to drops
+              </Link>
             </div>
-            <div className={cx(styles.prevArrow, "transform rotate-90")}>
-              <Link to={`/drops-${prevName}`}>{prevName} ↓</Link>
+            <div className={cx(styles.prevArrow)}>
+              <Link to={`/drops-${prevName}`}>
+                <img src={LeftArrow} alt="Left arrow" />
+                <span className={styles.hover}>{prevName}</span>
+              </Link>
             </div>
-            <div className={cx(styles.nextArrow, "transform -rotate-90")}>
-              <Link to={`/drops-${nextName}`}>{nextName} ↓</Link>
+            <div className={cx(styles.nextArrow)}>
+              <Link to={`/drops-${nextName}`}>
+                <span className={styles.hover}>{nextName}</span>{" "}
+                <img src={RightArrow} alt="Right arrow" />
+              </Link>
             </div>
             {/* SPLASH IMAGE */}
             <img className={styles.img} src={drop.img} alt={`The full "${dropName}" outfit`} />

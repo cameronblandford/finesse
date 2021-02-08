@@ -6,7 +6,11 @@ const defaultOptions = {
   arrows: false,
   slidesToShow: 1,
   appendDots: (dots) => <ul className={cx("slick-dots", styles.pageContainer)}>{dots}</ul>,
-  customPaging: () => <div className={styles.customPageElement}></div>,
+  customPaging: () => (
+    <div className={styles.clickableArea}>
+      <div className={styles.bar}></div>
+    </div>
+  ),
 };
 
 const Carousel = ({ children, options = {} }) => {

@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Drops.module.scss";
 import { useDispatch } from "react-redux";
 import { fetchAllDrops } from "../store/dropsSlice";
 import cx from "classnames";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Helmet from "react-helmet";
 
 import VertRara from "../assets/images/Drops-Vertical-Rara.jpg";
@@ -27,8 +27,27 @@ const PhotoColumn = ({ img = "https://picsum.photos/500/800", name = "JACKIE" })
   );
 };
 
+const getWindowDimensions = () => {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+};
+
 const Drops = () => {
   const dispatch = useDispatch();
+  // const [shouldRedirect, setShouldRedirect] = useState(false);
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchAllDrops());
@@ -36,6 +55,7 @@ const Drops = () => {
 
   return (
     <div>
+      {windowDimensions.width < 991 && <Redirect to="/drops-bebe" />}
       <Helmet>
         <title>THE DROPS | FINESSE</title>
       </Helmet>
@@ -48,18 +68,6 @@ const Drops = () => {
         <PhotoColumn img={VertBella} name="bella" />
         <PhotoColumn img={VertJacko} name="jacko" />
       </div>
-      <div className={styles.mobile}>
-        <div className={styles.grid}>
-          <PhotoColumn img={VertLana} name="lana" />
-          <PhotoColumn img={VertBebe} name="bebe" />
-          <PhotoColumn img={VertLexi} name="lexi" />
-          <PhotoColumn img={VertRara} name="rara" />
-          <PhotoColumn img={VertBurbie} name="burbie" />
-          <PhotoColumn img={VertBella} name="bella" />
-          <PhotoColumn img={VertJacko} name="jacko" />
-        </div>
-      </div>
-      {/* <Footer /> */}
     </div>
   );
 };

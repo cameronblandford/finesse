@@ -1,5 +1,11 @@
 @import "../styles/vars.scss";
 
+.mobileOnly {
+  display: none;
+  @media (max-width: 991px) {
+    display: block;
+  }
+}
 .dropDetailContainerDesktop {
   display: flex;
   align-items: flex-start;
@@ -20,10 +26,12 @@
     height: 100%;
     flex-grow: 1;
     .backToDrops {
-      .arrowBack {
+      .backArrow {
         width: 30px;
         height: auto;
         display: inline-block;
+        position: relative;
+        top: -1px;
       }
       a:hover {
         color: $color-black;
@@ -40,17 +48,28 @@
       position: absolute;
       z-index: 1000;
       color: $color-dark-gray;
+      top: 50%;
+      img {
+        height: 16px;
+        width: 16px;
+        display: inline;
+      }
+      .hover {
+        visibility: hidden;
+      }
       &:hover {
         color: $color-black;
+        .hover {
+          visibility: visible;
+          // font-weight: bold;
+        }
       }
     }
     .prevArrow {
-      left: -10px;
-      top: 30%;
+      left: 10px;
     }
     .nextArrow {
-      right: -10px;
-      bottom: 30%;
+      right: 10px;
     }
     .img {
       height: 100vh;
@@ -73,6 +92,10 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 60px;
+    }
+    .voteCount {
+      position: relative;
+      top: -3px;
     }
     h1 {
       font-size: $font-size-lg;
@@ -112,7 +135,7 @@
     display: none;
   }
   .carousel {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     background-color: $color-gray;
     position: relative;

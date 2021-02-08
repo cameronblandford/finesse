@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Drops from "./pages/Drops";
 import DropDetail from "./pages/DropDetail";
 import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 import "./App.scss";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/">
               <Index />
             </Route>
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </div>
