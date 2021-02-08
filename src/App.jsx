@@ -19,7 +19,7 @@ function App() {
             <Route exact path="/drops">
               <Drops />
             </Route>
-            <Route exact path="/drops/:id" component={DropDetail} />
+            <Route exact path="/drops-:id" component={DropDetail} />
             <Route exact path="/">
               <Index />
             </Route>

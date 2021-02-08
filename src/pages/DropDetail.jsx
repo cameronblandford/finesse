@@ -74,10 +74,10 @@ const DropDetail = ({ match }) => {
               <Link to="/drops">↖ Back to drops</Link>
             </div>
             <div className={cx(styles.prevArrow, "transform rotate-90")}>
-              <Link to={`/drops/${prevName}`}>{prevName} ↓</Link>
+              <Link to={`/drops-${prevName}`}>{prevName} ↓</Link>
             </div>
             <div className={cx(styles.nextArrow, "transform -rotate-90")}>
-              <Link to={`/drops/${nextName}`}>{nextName} ↓</Link>
+              <Link to={`/drops-${nextName}`}>{nextName} ↓</Link>
             </div>
             {/* SPLASH IMAGE */}
             <img className={styles.img} src={drop.img} alt={`The full "${dropName}" outfit`} />
@@ -119,10 +119,10 @@ const DropDetail = ({ match }) => {
       <div className={styles.dropDetailContainerMobile}>
         <div className={styles.carousel}>
           <div className={cx(styles.nextArrow)}>
-            <Link to={`/drops/${nextName}`}>{nextName} &gt;</Link>
+            <Link to={`/drops-${nextName}`}>{nextName} &gt;</Link>
           </div>
           <div className={cx(styles.prevArrow)}>
-            <Link to={`/drops/${prevName}`}>&lt; {prevName}</Link>
+            <Link to={`/drops-${prevName}`}>&lt; {prevName}</Link>
           </div>
           {Array.isArray(drop.mobileImg) ? (
             <Carousel>

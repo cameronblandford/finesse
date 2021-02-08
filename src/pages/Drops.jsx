@@ -16,7 +16,7 @@ import VertLexi from "../assets/images/Drops-Vertical-Lexi.jpg";
 
 const PhotoColumn = ({ img = "https://picsum.photos/500/800", name = "JACKIE" }) => {
   return (
-    <Link to={`/drops/${name}`}>
+    <Link to={`/drops-${name}`}>
       <div
         className={cx(styles.photoCol, "bg-gray-300")}
         style={{ backgroundImage: `url('${img}')` }}
