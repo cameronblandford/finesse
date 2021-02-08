@@ -1,5 +1,7 @@
 .footerWrapper {
+  display: none;
   @media (min-width: 992px) {
+    display: block;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -8,26 +10,60 @@
     &:hover {
       .footer {
         height: 60px;
+        bottom: 0px;
       }
     }
   }
 }
 .footer {
-  img {
-    width: 92px;
-    height: 28px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: -100px;
+  .left {
+    display: flex;
+    align-items: center;
+    div {
+      margin-left: 12px;
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    img {
+      height: 16px;
+      width: auto;
+      margin-right: 12px;
+    }
   }
   @media (min-width: 992px) {
     height: 0;
     position: fixed;
-    bottom: 0;
     left: 0;
     right: 0;
   }
   @media (max-width: 991px) {
     padding: 20px 0;
     text-align: center;
+    .logo {
+      width: 92px;
+      height: 28px;
+      margin: 0 auto;
+    }
+  }
+  background-color: #eee;
+}
+.footerMobile {
+  display: none;
+  @media (max-width: 991px) {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    .logo {
+      width: 92px;
+      height: 28px;
+      margin: 0 auto;
+    }
   }
   background-color: #eee;
 }

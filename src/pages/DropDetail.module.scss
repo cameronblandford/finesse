@@ -92,12 +92,6 @@
       @media (max-width: 1100px) {
         grid-template-columns: 1fr;
       }
-      .product {
-        &:nth-child(5) {
-          grid-column: span 2;
-          height: 60vh;
-        }
-      }
       @media (min-width: 2000px) {
         grid-template-columns: 1fr 1fr 1fr;
         max-width: none;
@@ -149,6 +143,11 @@
     grid-template-columns: 50% 50%;
     gap: 1px;
     background-color: #fff;
+    .product {
+      background-color: #eee;
+      width: 100%;
+      height: 100%;
+    }
     .product:nth-child(5) {
       grid-column: span 2;
       height: 60vh;
@@ -159,6 +158,11 @@
     margin-bottom: 24px;
     .hed {
       font-family: "Helvetica Neue Black", sans-serif;
+      margin-top: 20px;
+      margin-bottom: 4px;
+    }
+    .subhed {
+      margin-bottom: 20px;
     }
   }
   .socialPost {

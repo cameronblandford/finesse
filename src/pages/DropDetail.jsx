@@ -5,39 +5,51 @@ import ProductTile from "../components/ProductTile";
 import { fetchProductsByCollection } from "../store/dropsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import getDropInfo, { getNextName, getPrevName } from "../util/dropIds";
-import ArrowBack from "../assets/icons/arrow-back.svg";
+// import ArrowBack from "../assets/icons/arrow-back.svg";
 import Slider from "react-slick";
+import Helmet from "react-helmet";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
 const DropDetail = ({ match }) => {
+  // get drop info
   const dropName = match.params.id;
+  const nextName = getNextName(dropName);
+  const prevName = getPrevName(dropName);
   const drop = getDropInfo(match.params.id);
   const dropId = drop.id || 171868618829;
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchProductsByCollection(dropId));
-  }, []);
   const [products, setProducts] = useState([]);
+
+  // fetch drop info by bucket
   const { byId = {} } = useSelector((state) => state.drops);
 
+  // load drop products into respective id's bucket
+  useEffect(() => {
+    dispatch(fetchProductsByCollection(dropId));
+  }, [dispatch, dropId]);
+
+  // set products using drop info
   useEffect(() => {
     setProducts(byId[dropId] || []);
   }, [byId, dropId, setProducts]);
 
-  const nextName = getNextName(dropName);
-  const prevName = getPrevName(dropName);
-
+  // carousel settings
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     arrows: false,
-    slidesToShow: 1.5,
+    responsive: [
+      { breakpoint: 991, settings: { slidesToShow: 3.5 } },
+      { breakpoint: 700, settings: { slidesToShow: 2.5 } },
+      { breakpoint: 500, settings: { slidesToShow: 1.5 } },
+    ],
   };
 
+  // instagram post
   const SocialPost = () => {
     return (
       <div className={styles.socialPost}>
@@ -52,6 +64,9 @@ const DropDetail = ({ match }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>{dropName.toUpperCase()} | FINESSE</title>
+      </Helmet>
       <div className={styles.dropDetailContainerDesktop}>
         <div className={styles.left}>
           <div className={styles.mainImage}>
@@ -63,7 +78,7 @@ const DropDetail = ({ match }) => {
               <Link to={`/drops/${prevName}`}>{prevName} ↓</Link>
             </div>
             <div className={cx(styles.nextArrow, "transform -rotate-90")}>
-              <Link href={`/drops/${nextName}`}>{nextName} ↓</Link>
+              <Link to={`/drops/${nextName}`}>{nextName} ↓</Link>
             </div>
             {/* SPLASH IMAGE */}
             <img className={styles.img} src={drop.img} alt={`The full "${dropName}" outfit`} />
@@ -95,12 +110,20 @@ const DropDetail = ({ match }) => {
                 img={p.image && p.image.src}
               />
             ))}
+            {(products.length < 5 && products.length % 2 !== 0) ||
+            (products.length > 5 && products.length % 2 === 0) ? (
+              <div className={styles.product} />
+            ) : null}
           </div>
         </div>
       </div>
       <div className={styles.dropDetailContainerMobile}>
         <div className={styles.carousel}>
-          <img className={styles.headerImage} src={drop.mobileImg} />
+          <img
+            className={styles.headerImage}
+            src={drop.mobileImg}
+            alt={`A model wearing the full ${dropName} drop.`}
+          />
         </div>
         <div className={styles.shopHeader}>Shop the drop</div>
         <div className={styles.productGrid}>
@@ -113,9 +136,13 @@ const DropDetail = ({ match }) => {
               img={p.image && p.image.src}
             />
           ))}
+          {(products.length < 5 && products.length % 2 !== 0) ||
+          (products.length > 5 && products.length % 2 === 0) ? (
+            <div className={styles.product} />
+          ) : null}
         </div>
         <div className={styles.influencerContent}>
-          <div className={styles.hed}>The Avani</div>
+          <div className={styles.hed}>The {dropName}</div>
           <div className={styles.subhed}>Influencer Content</div>
           <Slider {...settings}>
             <SocialPost />

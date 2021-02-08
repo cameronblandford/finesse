@@ -130,6 +130,11 @@
     border-radius: 17px;
     font-size: 14px;
     height: 27px;
+    &:hover {
+      background: lightgray;
+      color: white;
+      border: 1px solid gray;
+    }
 
     @media (max-width: 991px) {
       display: none;
