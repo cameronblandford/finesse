@@ -3,9 +3,9 @@ import styles from "./Drops.module.scss";
 import { useDispatch } from "react-redux";
 import { fetchAllDrops } from "../store/dropsSlice";
 import cx from "classnames";
-import Footer from "../components/Footer";
 import ProductTile from "../components/ProductTile";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import VertRara from "../assets/images/Drops-Vertical-Rara.jpg";
 import VertBebe from "../assets/images/Drops-Vertical-Bebe.jpg";
@@ -37,6 +37,9 @@ const Drops = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>THE DROPS | FINESSE</title>
+      </Helmet>
       <div className={styles.desktop}>
         <PhotoColumn img={VertLana} name="lana" />
         <PhotoColumn img={VertBebe} name="bebe" />
@@ -48,24 +51,13 @@ const Drops = () => {
       </div>
       <div className={styles.mobile}>
         <div className={styles.grid}>
-          <div className={styles.DropBox}>
-            <ProductTile />
-          </div>
-          <div className={styles.DropBox}>
-            <ProductTile />
-          </div>
-          <div className={styles.DropBox}>
-            <ProductTile />
-          </div>
-          <div className={styles.DropBox}>
-            <ProductTile />
-          </div>
-          <div className={styles.DropBox}>
-            <ProductTile />
-          </div>
-          <div className={styles.DropBox}>
-            <ProductTile />
-          </div>
+          <PhotoColumn img={VertLana} name="lana" />
+          <PhotoColumn img={VertBebe} name="bebe" />
+          <PhotoColumn img={VertLexi} name="lexi" />
+          <PhotoColumn img={VertRara} name="rara" />
+          <PhotoColumn img={VertBurbie} name="burbie" />
+          <PhotoColumn img={VertBella} name="bella" />
+          <PhotoColumn img={VertJacko} name="jacko" />
         </div>
       </div>
       {/* <Footer /> */}

@@ -13,12 +13,12 @@
 
 $black: #010203;
 $gray: rgb(227, 232, 235); // 227 232 235
-$white: #eee;
+$offwhite: #eee;
 
 html body {
   text-transform: uppercase;
   font-family: "Carbon", sans-serif;
-  background-color: $white;
+  background-color: $offwhite;
   color: $black;
 
   h1,

@@ -123,12 +123,12 @@
       z-index: 1000;
     }
     .prevArrow {
-      left: 5px;
-      top: 30%;
+      left: 16px;
+      bottom: 8px;
     }
     .nextArrow {
-      right: 2px;
-      bottom: 30%;
+      right: 16px;
+      bottom: 8px;
     }
   }
   .shopHeader {
@@ -143,6 +143,8 @@
     grid-template-columns: 50% 50%;
     gap: 1px;
     background-color: #fff;
+    z-index: 0;
+    overflow: hidden;
     .product {
       background-color: #eee;
       width: 100%;
@@ -166,7 +168,7 @@
     }
   }
   .socialPost {
-    height: 300px;
+    // height: 300px;
     margin-right: 16px;
     .footer {
       margin-top: 8px;
@@ -180,7 +182,7 @@
     }
     .authorHandle {
       margin-left: 8px;
-      color: #666;
+      // color: #666;
     }
   }
   .episodeTile {

@@ -65,7 +65,7 @@ const DropDetail = ({ match }) => {
   return (
     <div>
       <Helmet>
-        <title>{dropName.toUpperCase()} | FINESSE</title>
+        <title>THE {dropName.toUpperCase()} | FINESSE</title>
       </Helmet>
       <div className={styles.dropDetailContainerDesktop}>
         <div className={styles.left}>
@@ -119,6 +119,12 @@ const DropDetail = ({ match }) => {
       </div>
       <div className={styles.dropDetailContainerMobile}>
         <div className={styles.carousel}>
+          <div className={cx(styles.nextArrow)}>
+            <Link to={`/drops/${nextName}`}>{nextName} &gt;</Link>
+          </div>
+          <div className={cx(styles.prevArrow)}>
+            <Link to={`/drops/${prevName}`}>&lt; {prevName}</Link>
+          </div>
           <img
             className={styles.headerImage}
             src={drop.mobileImg}

@@ -1,7 +1,13 @@
-import React from 'react';
-
+import React from "react";
+import Helmet from "react-helmet";
 const Index = () => {
-  return <div>Index page</div>
-}
+  return (
+    <div>
+      <Helmet>
+        <title>FINESSE US</title>
+      </Helmet>
+    </div>
+  );
+};
 
 export default Index;

@@ -41,6 +41,7 @@
     position: fixed;
     left: 0;
     right: 0;
+    transition: 0.15s ease-in-out;
   }
   @media (max-width: 991px) {
     padding: 20px 0;

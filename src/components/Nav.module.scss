@@ -7,6 +7,7 @@
   height: 40px;
   font-size: 12.5px;
   letter-spacing: 0.2px;
+  width: 100vw;
   @media (min-width: 992px) {
     margin-top: 4px;
     margin-left: 30px;
@@ -34,9 +35,9 @@
     align-items: center;
     max-width: 55%;
     @media (max-width: 991px) {
-      // display: none;
-      overflow: hidden;
-      width: 0;
+      display: none;
+      // overflow: hidden;
+      // width: 0;
     }
     // position: relative;
     .navItem {
