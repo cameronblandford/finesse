@@ -1,18 +1,37 @@
 .productTile {
   height: 100%;
   width: 100%;
+  background-color: #eee;
   display: flex;
   flex-direction: column-reverse;
-  background-image: url("https://picsum.photos/400/400");
   background-size: cover;
   background-position: center;
+  position: relative;
+  .img {
+    height: 100%;
+    object-fit: cover; /* scale the image */
+    object-position: center; /* Center the image within the element */
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
   .productName {
     text-align: center;
-    margin-bottom: 30px;
-    // mix-blend-mode: difference;
+    // left: 50%;
+    // transform: translate(-50%, 0);
     color: #010203;
     .highlight {
       background-color: #eee;
+    }
+    // top: 0;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+
+    position: absolute;
+    @media (max-width: 991px) {
+      line-height: 13px;
+      // font-size: 14px;
     }
   }
 }

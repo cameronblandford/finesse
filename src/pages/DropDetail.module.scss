@@ -1,4 +1,4 @@
-.dropDetailContainer {
+.dropDetailContainerDesktop {
   display: flex;
   align-items: flex-start;
   padding: 0;
@@ -6,6 +6,9 @@
   width: 100%;
   max-width: none;
   height: 100vh;
+  @media (max-width: 991px) {
+    display: none;
+  }
   .left {
     justify-content: center;
     display: flex;
@@ -14,9 +17,44 @@
     position: relative;
     height: 100%;
     flex-grow: 1;
-    img {
+    a:hover {
+      color: gray;
+    }
+    .backToDrops {
+      .arrowBack {
+        width: 30px;
+        height: auto;
+        display: inline-block;
+      }
+      a:hover {
+        color: #010203;
+      }
+      font-size: 12px;
+      color: gray;
+      z-index: 1000;
+      position: absolute;
+      top: 10%;
+      left: 30px;
+    }
+    .prevArrow,
+    .nextArrow {
+      position: absolute;
+      z-index: 1000;
+    }
+    .prevArrow {
+      left: 5px;
+      top: 30%;
+    }
+    .nextArrow {
+      right: 2px;
+      bottom: 30%;
+    }
+    .img {
       height: 100vh;
       width: auto;
+      @media (min-width: 992px) {
+        min-width: 100%;
+      }
       object-fit: cover; /* Do not scale the image */
       object-position: center; /* Center the image within the element */
     }
@@ -26,16 +64,125 @@
     height: 100%;
     padding: 13vh 47px 0;
     overflow: auto;
+    max-width: 50%;
     .header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 60px;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    h3 {
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+    .dek {
+      margin-top: 25px;
+      margin-bottom: 40px;
+      max-width: 40rem;
     }
     .dropShopGrid {
       display: grid;
-      grid-auto-rows: 400px;
-      grid-template-columns: 3fr 2fr;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+
+      max-width: 700px;
+      margin: 10px auto;
+      @media (max-width: 1100px) {
+        grid-template-columns: 1fr;
+      }
+      .product {
+        &:nth-child(5) {
+          grid-column: span 2;
+          height: 60vh;
+        }
+      }
+      @media (min-width: 2000px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: none;
+      }
+      // .product {
+      // }
     }
   }
   min-height: 100vh;
+}
+.dropDetailContainerMobile {
+  @media (min-width: 992px) {
+    display: none;
+  }
+  .carousel {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(229, 230, 235);
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto;
+    }
+    .prevArrow,
+    .nextArrow {
+      position: absolute;
+      z-index: 1000;
+    }
+    .prevArrow {
+      left: 5px;
+      top: 30%;
+    }
+    .nextArrow {
+      right: 2px;
+      bottom: 30%;
+    }
+  }
+  .shopHeader {
+    background-color: yellow;
+    padding: 10px 0;
+    font-family: "Helvetica Neue Black", sans-serif;
+    text-align: center;
+  }
+  .productGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1px;
+    background-color: #fff;
+    .product:nth-child(5) {
+      grid-column: span 2;
+      height: 60vh;
+    }
+  }
+  .influencerContent {
+    padding: 8px;
+    margin-bottom: 24px;
+    .hed {
+      font-family: "Helvetica Neue Black", sans-serif;
+    }
+  }
+  .socialPost {
+    height: 300px;
+    margin-right: 16px;
+    .footer {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+    }
+    .authorImage {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+    }
+    .authorHandle {
+      margin-left: 8px;
+      color: #666;
+    }
+  }
+  .episodeTile {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

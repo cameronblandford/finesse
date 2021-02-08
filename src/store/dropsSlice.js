@@ -62,7 +62,20 @@ export const fetchProductsByCollection = (collectionId) => async (dispatch) => {
   try {
     const { data } = await axios.post(
       SHOPIFY_API,
-      { collectionId, requestType: "product_by_collection" },
+      {
+        collectionId,
+        requestType: "product_by_collection",
+        query: `
+            images(first: 1) {
+              edges {
+                node {
+                  originalSrc
+                  transformedSrc(maxWidth: 100, maxHeight: 100)
+                }
+              }
+            }
+      `,
+      },
       axiosConfig
     );
     dispatch(
