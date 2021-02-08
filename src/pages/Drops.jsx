@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Drops.module.scss";
-import { useDispatch } from "react-redux";
-import { fetchAllDrops } from "../store/dropsSlice";
 import cx from "classnames";
 import { Link, Redirect } from "react-router-dom";
 import Helmet from "react-helmet";
@@ -36,8 +34,6 @@ const getWindowDimensions = () => {
 };
 
 const Drops = () => {
-  const dispatch = useDispatch();
-  // const [shouldRedirect, setShouldRedirect] = useState(false);
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
   useEffect(() => {
@@ -47,10 +43,6 @@ const Drops = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    dispatch(fetchAllDrops());
   }, []);
 
   return (

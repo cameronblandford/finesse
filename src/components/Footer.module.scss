@@ -71,12 +71,16 @@
   display: none;
   @media (max-width: 991px) {
     display: block;
-    padding: 20px 0;
+    padding: 50px 0 30px;
     text-align: center;
     .logo {
       width: 92px;
       height: 28px;
-      margin: 0 auto;
+      margin: 0 auto 20px;
+    }
+    .dek {
+      font-size: $font-size-sm;
+      color: $color-dark-gray;
     }
   }
   background-color: $color-offwhite;

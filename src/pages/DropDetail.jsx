@@ -31,8 +31,11 @@ const DropDetail = ({ match }) => {
 
   // load drop products into respective id's bucket
   useEffect(() => {
-    dispatch(fetchProductsByCollection(dropId));
-  }, [dispatch, dropId]);
+    // only fetch if it doesn't exist in redux
+    if (!byId[dropId]) {
+      dispatch(fetchProductsByCollection(dropId));
+    }
+  }, [dispatch, dropId, byId]);
 
   // set products using drop info
   useEffect(() => {
@@ -48,7 +51,7 @@ const DropDetail = ({ match }) => {
     responsive: [
       { breakpoint: 991, settings: { slidesToShow: 3.5 } },
       { breakpoint: 700, settings: { slidesToShow: 2.5 } },
-      { breakpoint: 500, settings: { slidesToShow: 1.5 } },
+      { breakpoint: 500, settings: { slidesToShow: 2.2 } },
     ],
   };
 

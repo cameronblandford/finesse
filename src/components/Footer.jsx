@@ -45,6 +45,7 @@ const Footer = () => {
           className={styles.logo}
           alt="A barcode with 'Finesse' under it, Finesse's logo."
         />
+        <div className={styles.dek}>© FINESSE US INC 2021</div>
       </div>
     </>
   );

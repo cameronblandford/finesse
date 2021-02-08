@@ -3,7 +3,7 @@
   text-transform: uppercase;
   width: 100%;
   text-align: center;
-  padding: 10px 0;
+  padding: 14px 0;
   background-color: $color-black;
   color: $color-offwhite;
   font-family: $font-family-black;
@@ -11,7 +11,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &.yellow {
-    background-color: yellow;
+    background-color: $color-yellow;
     color: $color-black;
   }
 }
