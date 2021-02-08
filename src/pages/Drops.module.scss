@@ -1,3 +1,5 @@
+@import "../styles/vars.scss";
+
 .desktop {
   @media (max-width: 991px) {
     display: none;
@@ -14,13 +16,13 @@
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    background-color: rgb(229, 230, 235);
+    background-color: $color-gray;
 
     display: flex;
     flex-direction: column-reverse;
     &:hover {
       .name {
-        color: #444;
+        color: $color-dark-gray;
       }
     }
     .name {
@@ -28,8 +30,8 @@
       font-size: 40px;
       letter-spacing: 2px;
       padding-bottom: 50px;
-      font-family: "Helvetica Neue Black", sans-serif;
-      color: #040607;
+      font-family: $font-family-black;
+      color: $color-light-black;
 
       @media (max-width: 1300px) {
         font-size: 32px;
@@ -39,7 +41,7 @@
         font-size: 24px;
         padding-bottom: 58px;
       }
-      background-color: rgb(227, 232, 235);
+      background-color: $color-gray;
       $shadow-color: rgba(0, 0, 0, 0.3);
       $highlight-color: rgba(0, 0, 0, 0.1);
       $bevel-px: 1px;

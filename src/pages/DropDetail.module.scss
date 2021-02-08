@@ -1,3 +1,5 @@
+@import "../styles/vars.scss";
+
 .dropDetailContainerDesktop {
   display: flex;
   align-items: flex-start;
@@ -24,10 +26,10 @@
         display: inline-block;
       }
       a:hover {
-        color: #010203;
+        color: $color-black;
       }
-      font-size: 12px;
-      color: gray;
+      font-size: $font-size-sm;
+      color: $color-dark-gray;
       z-index: 1000;
       position: absolute;
       top: 10%;
@@ -37,9 +39,9 @@
     .nextArrow {
       position: absolute;
       z-index: 1000;
-      color: gray;
+      color: $color-dark-gray;
       &:hover {
-        color: #010203;
+        color: $color-black;
       }
     }
     .prevArrow {
@@ -64,15 +66,16 @@
     width: 65%;
     height: 100%;
     padding: 13vh 47px 0;
-    overflow: auto;
-    max-width: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 33.33%;
     .header {
       display: flex;
       justify-content: space-between;
       margin-bottom: 60px;
     }
     h1 {
-      font-size: 20px;
+      font-size: $font-size-lg;
     }
     h3 {
       margin-bottom: 9px;
@@ -90,8 +93,9 @@
 
       max-width: 700px;
       margin: 10px auto;
-      @media (max-width: 1100px) {
+      @media (max-width: 1300px) {
         grid-template-columns: 1fr;
+        gap: 10px;
       }
       @media (min-width: 2000px) {
         grid-template-columns: 1fr 1fr 1fr;
@@ -110,7 +114,7 @@
   .carousel {
     height: 100vh;
     width: 100%;
-    background-color: rgb(229, 230, 235);
+    background-color: $color-gray;
     position: relative;
     .headerImg {
       height: 100%;
@@ -119,61 +123,23 @@
       object-position: center;
       margin: 0 auto;
     }
-    .customPageElement {
-      width: 100%;
-      height: 100%;
-    }
-
-    :global .slick-list,
-    :global .slick-track {
-      height: 100%;
-    }
-    :global .slick-track {
-      display: flex;
-    }
-    :global .slick-slider {
-      height: 100%;
-    }
-    :global .slick-track .slick-slide {
-      display: flex;
-      height: auto;
-    }
-    :global .slick-dots {
-      display: flex;
-      width: 50%;
-      left: 25%;
-      bottom: 10px;
-      justify-content: center;
-      li {
-        flex-grow: 1;
-        // margin: 0 5px;
-        margin: 0;
-        width: 100%;
-        height: 2px;
-        background-color: lightgray;
-        &.slick-active {
-          background-color: white;
-        }
-      }
-    }
     .prevArrow,
     .nextArrow {
       position: absolute;
       z-index: 1000;
+      bottom: 24px;
     }
     .prevArrow {
       left: 16px;
-      bottom: 8px;
     }
     .nextArrow {
       right: 16px;
-      bottom: 8px;
     }
   }
   .shopHeader {
-    background-color: yellow;
+    background-color: yellow; // TODO: fix
     padding: 10px 0;
-    font-family: "Helvetica Neue Black", sans-serif;
+    font-family: $font-family-black;
     text-align: center;
   }
   .productGrid {
@@ -181,24 +147,66 @@
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 1px;
-    background-color: #fff;
+    background-color: $color-white;
     z-index: 0;
     overflow: hidden;
     .product {
-      background-color: #eee;
+      background-color: $color-offwhite;
       width: 100%;
       height: 100%;
     }
-    .product:nth-child(5) {
+    @mixin large-tile {
       grid-column: span 2;
       height: 60vh;
+      min-height: 110vw;
+    }
+    &.products1 {
+      .product:first-child {
+        @include large-tile();
+      }
+    }
+    &.products4 {
+      .product:first-child,
+      .product:nth-child(4) {
+        @include large-tile();
+      }
+    }
+    &.products7 {
+      .product:nth-child(1),
+      .product:nth-child(4),
+      .product:nth-child(7) {
+        @include large-tile();
+      }
+    }
+    &.products3,
+    &.products6,
+    &.products9,
+    &.products12 {
+      .product:nth-child(3n) {
+        @include large-tile();
+      }
+    }
+    &.products5,
+    &.products10,
+    &.products15 {
+      .product:nth-child(5) {
+        @include large-tile();
+      }
+    }
+    &.products8,
+    &.products11 {
+      .product:nth-child(3n),
+      .product:nth-child(6),
+      .product:nth-child(9) {
+        @include large-tile();
+      }
     }
   }
   .influencerContent {
     padding: 8px;
     margin-bottom: 24px;
     .hed {
-      font-family: "Helvetica Neue Black", sans-serif;
+      font-family: $font-family-black;
       margin-top: 20px;
       margin-bottom: 4px;
     }

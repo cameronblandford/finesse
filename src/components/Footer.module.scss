@@ -1,3 +1,5 @@
+@import "../styles/vars.scss";
+
 .footerWrapper {
   display: none;
   @media (min-width: 992px) {
@@ -41,7 +43,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    transition: 0.15s ease-in-out;
+    transition: $transition;
   }
   @media (max-width: 991px) {
     padding: 20px 0;
@@ -52,7 +54,7 @@
       margin: 0 auto;
     }
   }
-  background-color: #eee;
+  background-color: $color-offwhite;
 }
 .footerMobile {
   display: none;
@@ -66,5 +68,5 @@
       margin: 0 auto;
     }
   }
-  background-color: #eee;
+  background-color: $color-offwhite;
 }

@@ -6,11 +6,11 @@ import { fetchProductsByCollection } from "../store/dropsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import getDropInfo, { getNextName, getPrevName } from "../util/dropIds";
 // import ArrowBack from "../assets/icons/arrow-back.svg";
+import Carousel from "../components/Carousel";
 import Slider from "react-slick";
 import Helmet from "react-helmet";
-
+import Button from "../components/Button";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
 const DropDetail = ({ match }) => {
@@ -49,14 +49,6 @@ const DropDetail = ({ match }) => {
     ],
   };
 
-  const splashCarouselSettings = {
-    dots: true,
-    arrows: false,
-    slidesToShow: 1,
-    appendDots: (dots) => <div className={styles.pageContainer}>{dots}</div>,
-    customPaging: (i) => <div className={styles.customPageElement}></div>,
-  };
-
   // instagram post
   const SocialPost = () => {
     return (
@@ -69,7 +61,6 @@ const DropDetail = ({ match }) => {
       </div>
     );
   };
-  console.log(drop.mobileImg);
   return (
     <div>
       <Helmet>
@@ -103,9 +94,9 @@ const DropDetail = ({ match }) => {
               `Boss chill baby vibes kinda fit. Relaxed but make it sexy. Cute but make it badass.
           G-chain necklace to handcuff anyone. You know ... if you need to ;) Sustainably made using
           advances in AI throughout our production pipeline. Sabreena is wearing XS, made for 5'6",
-          31.5" chest, 25" waist, 35" hips. Free shipping & free returns`}
-            .
+          31.5" chest, 25" waist, 35" hips. Free shipping & free returns.`}
           </div>
+          <Button>View Episode</Button>
           <h3>Shop the drop</h3>
           <hr />
           <div className={styles.dropShopGrid}>
@@ -134,7 +125,7 @@ const DropDetail = ({ match }) => {
             <Link to={`/drops/${prevName}`}>&lt; {prevName}</Link>
           </div>
           {Array.isArray(drop.mobileImg) ? (
-            <Slider {...splashCarouselSettings}>
+            <Carousel>
               {drop.mobileImg.map((x) => {
                 return (
                   <img
@@ -144,7 +135,7 @@ const DropDetail = ({ match }) => {
                   />
                 );
               })}
-            </Slider>
+            </Carousel>
           ) : (
             <img
               className={styles.headerImg}
@@ -153,8 +144,8 @@ const DropDetail = ({ match }) => {
             />
           )}
         </div>
-        <div className={styles.shopHeader}>Shop the drop</div>
-        <div className={styles.productGrid}>
+        <Button variant="yellow">Shop The Drop</Button>
+        <div className={cx(styles.productGrid, styles[`products${products.length}`])}>
           {products.map((p) => (
             <ProductTile
               key={p.title}
@@ -164,10 +155,10 @@ const DropDetail = ({ match }) => {
               img={p.image && p.image.src}
             />
           ))}
-          {(products.length < 5 && products.length % 2 !== 0) ||
+          {/* {(products.length < 5 && products.length % 2 !== 0) ||
           (products.length > 5 && products.length % 2 === 0) ? (
             <div className={styles.product} />
-          ) : null}
+          ) : null} */}
         </div>
         <div className={styles.influencerContent}>
           <div className={styles.hed}>The {dropName}</div>
@@ -185,7 +176,7 @@ const DropDetail = ({ match }) => {
           <div className={styles.episodeImg}>
             <img src={drop.img} alt="" />
           </div>
-          <div className={styles.shopHeader}>View Episode</div>
+          <Button variant="yellow">View Episode</Button>
         </div>
       </div>
     </div>

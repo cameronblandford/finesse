@@ -3,7 +3,6 @@ import styles from "./Drops.module.scss";
 import { useDispatch } from "react-redux";
 import { fetchAllDrops } from "../store/dropsSlice";
 import cx from "classnames";
-import ProductTile from "../components/ProductTile";
 import { Link } from "react-router-dom";
 import Helmet from "react-helmet";
 

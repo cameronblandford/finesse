@@ -1,0 +1,34 @@
+@font-face {
+  font-family: Carbon;
+  src: url("../assets/fonts/CARBONRegular.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Carbon;
+  src: url("../assets/fonts/CARBONBold.woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Neue Black";
+  src: url("../assets/fonts/HelveticaNeue-BlackExt.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-family-black: "Helvetica Neue Black", Helvetica, sans-serif;
+$font-family-carbon: "Carbon", Helvetica, sans-serif;
+
+$color-black: #010203;
+$color-light-black: #040607;
+$color-dark-gray: #565d6a;
+$color-gray: #e5e6eb;
+$color-offwhite: #eeeeee;
+$color-white: #fff;
+$color-scrollbar-gray: #9599a2;
+$font-size-sm: 12px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 25px;
+$transition: 0.15s ease-in-out;

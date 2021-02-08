@@ -1,3 +1,5 @@
+@import "../styles/vars.scss";
+
 .nav {
   transition: 0.3s ease-in-out;
   position: fixed;
@@ -5,7 +7,7 @@
   left: 0;
   right: 0;
   height: 40px;
-  font-size: 12.5px;
+  font-size: $font-size-sm;
   letter-spacing: 0.2px;
   @media (min-width: 992px) {
     margin-top: 4px;
@@ -52,7 +54,7 @@
           height: 1px;
           left: 0;
           position: absolute;
-          background: #010203;
+          background: $color-black;
           transition: all 0.2s ease-in-out;
           width: 0;
         }
@@ -71,8 +73,8 @@
         bottom: 0;
         width: 50vw;
         height: 100vh;
-        font-size: 16px;
-        background-color: white;
+        font-size: $font-size-md;
+        background-color: $color-white;
         padding-top: 30px;
         padding-left: 15px;
 
@@ -98,7 +100,7 @@
     width: 20px;
     height: 17px;
     position: relative;
-    transition: 0.5s ease-in-out;
+    transition: $transition;
     cursor: pointer;
     &.open span:first-child {
       top: 9px;
@@ -109,14 +111,14 @@
       transform: rotate(-135deg);
     }
     span {
-      border: 1px solid #010203;
+      border: 1px solid $color-black;
       display: block;
       position: absolute;
       height: 0;
       width: inherit;
       opacity: 1;
       left: 0;
-      transition: 0.25s ease-in-out;
+      transition: $transition;
       &:first-child {
         top: 6px;
       }
@@ -126,15 +128,16 @@
     }
   }
   .joinButton {
-    border: 1px solid #010203;
+    border: 1px solid $color-black;
     padding: 4px 30px;
     border-radius: 17px;
     font-size: 14px;
     height: 27px;
+    background: $color-offwhite;
     &:hover {
-      background: lightgray;
-      color: white;
-      border: 1px solid gray;
+      background: $color-gray;
+      color: $color-offwhite;
+      border: 1px solid $color-dark-gray;
     }
 
     @media (max-width: 991px) {

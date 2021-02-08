@@ -1,43 +1,36 @@
-@mixin font($font-family, $font-file) {
-  @font-face {
-    font-family: $font-family;
-    src: url($font-file);
-    font-weight: normal;
-    font-style: normal;
-  }
-}
-
-@include font("Carbon", "./assets/fonts/CARBONRegular.woff");
-@include font("Carbon Bold", "./assets/fonts/CARBONBold.woff");
-@include font("Helvetica Neue Black", "./assets/fonts/HelveticaNeue-BlackExt.otf");
-
-$black: #010203;
-$gray: rgb(227, 232, 235); // 227 232 235
-$offwhite: #eee;
+@import "./styles/vars.scss";
 
 html body {
   text-transform: uppercase;
-  font-family: "Carbon", sans-serif;
-  background-color: $offwhite;
-  color: $black;
+  font-family: $font-family-carbon;
+  background-color: $color-offwhite;
+  color: $color-black;
 
   h1,
   h2,
   h3 {
-    font-family: "Helvetica Neue Black", sans-serif;
+    font-family: $font-family-black;
   }
   h1 {
-    margin: 0;
-    color: $black;
-    font-size: 1.2em;
-    font-style: normal;
-    letter-spacing: normal;
+    color: $color-black;
+    font-size: $font-size-xl;
     line-height: 20px;
-    text-align: left;
     text-transform: uppercase;
-    font-weight: 900;
   }
   hr {
-    border-color: $black;
+    border-color: $color-black;
   }
+  ::-webkit-scrollbar {
+    width: 8px;
+    position: absolute;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $color-scrollbar-gray;
+  }
+  ::-webkit-scrollbar-track {
+    background: $color-offwhite;
+    border: 1px solid $color-gray;
+  }
+  // overflow-y: scroll;
+  // overflow-x: hidden;
 }

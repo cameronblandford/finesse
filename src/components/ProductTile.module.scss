@@ -1,7 +1,9 @@
+@import "../styles/vars.scss";
+
 .productTile {
   height: 100%;
   width: 100%;
-  background-color: #eee;
+  background-color: $color-offwhite;
   display: flex;
   flex-direction: column-reverse;
   background-size: cover;
@@ -18,9 +20,9 @@
   .productName {
     text-align: center;
     z-index: 0;
-    color: #010203;
+    color: $color-black;
     .highlight {
-      background-color: #eee;
+      background-color: $color-offwhite;
       z-index: 0;
     }
     // top: 0;
@@ -31,7 +33,6 @@
     position: absolute;
     @media (max-width: 991px) {
       line-height: 13px;
-      // font-size: 14px;
     }
   }
 }
