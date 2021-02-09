@@ -10,8 +10,6 @@
   a,
   .photoCol {
     flex: 1 1 0px;
-    // flex-grow: 1;
-    // flex-shrink: 1;
     height: 100%;
     background-image: url("https://picsum.photos/200/800");
     background-size: cover;
@@ -23,7 +21,7 @@
     flex-direction: column-reverse;
     &:hover {
       .name {
-        color: $color-dark-gray;
+        color: #333;
       }
     }
     .name {
