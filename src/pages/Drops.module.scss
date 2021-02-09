@@ -9,8 +9,9 @@
   display: flex;
   a,
   .photoCol {
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex: 1 1 0px;
+    // flex-grow: 1;
+    // flex-shrink: 1;
     height: 100%;
     background-image: url("https://picsum.photos/200/800");
     background-size: cover;

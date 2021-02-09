@@ -41,7 +41,7 @@
       z-index: 1000;
       position: absolute;
       top: 10%;
-      left: 47px;
+      left: $spacing-gutter;
     }
     .prevArrow,
     .nextArrow {
@@ -84,8 +84,10 @@
   .right {
     width: 65%;
     height: 100%;
-    padding: 13vh 47px 0;
-    overflow-y: auto;
+    padding-top: 13vh;
+    padding-left: $spacing-gutter;
+    padding-right: calc(#{$spacing-gutter} - 8px); // accounts for scrollbar
+    overflow-y: scroll; // always show scrollbar to keep spacing consistent
     overflow-x: hidden;
     max-width: 40%;
     @media (min-width: 1750px) {
@@ -270,6 +272,7 @@
     .authorHandle {
       margin-left: 8px;
       // color: #666;
+      font-size: $font-size-sm;
     }
   }
   .episodeTile {

@@ -47,6 +47,7 @@ const Drops = () => {
 
   return (
     <div>
+      {/* you can't be on this page on mobile! it doesn't work! */}
       {windowDimensions.width < 991 && <Redirect to="/drops-bebe" />}
       <Helmet>
         <title>THE DROPS | FINESSE</title>

@@ -11,7 +11,7 @@
     height: 60px;
     &:hover {
       .footer {
-        height: 60px;
+        height: 80px;
         bottom: 0px;
       }
     }
@@ -37,7 +37,7 @@
   .right {
     display: flex;
     align-items: center;
-    padding-right: 47px;
+    padding-right: $spacing-gutter;
     .shippingLink {
       margin-right: 15px;
     }
